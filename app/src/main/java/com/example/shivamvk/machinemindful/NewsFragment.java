@@ -45,6 +45,8 @@ public class NewsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        getActivity().setTitle("News");
+
         pbNews = view.findViewById(R.id.pb_news);
         rvNews = view.findViewById(R.id.rv_news);
 
@@ -110,5 +112,26 @@ public class NewsFragment extends Fragment {
 
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         requestQueue.add(stringRequest);
+
+        /*News news = new News(
+                "as",
+                "8 May 2018",
+                "Note that zipper weight change!",
+                "Weight Change in Product",
+                "asad",
+                "asfc"
+        );
+
+        newsList.add(news);
+        newsList.add(news);
+        newsList.add(news);
+        newsList.add(news);
+        newsList.add(news);
+        newsList.add(news);
+        newsList.add(news);
+
+        NewsAdapter adapter = new NewsAdapter(getContext(),newsList);
+        rvNews.setAdapter(adapter);
+        pbNews.setVisibility(View.GONE);*/
     }
 }

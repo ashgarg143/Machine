@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomerDetailsActivity$PlaceholderFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_start_visit_fm_customer"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:text="Start Visit"
+                android:layout_margin="6dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_blue_dark"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00:00"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:textSize="40sp"/>
+
+            <TextView
+                android:id="@+id/tv_start_timer_fm_customer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_dark"
+                android:layout_marginLeft="16dp"
+                android:textSize="16sp"
+                android:layout_below="@+id/bt_start_visit_fm_customer"
+                android:text="Start the timer to do further process"/>
+
+           <LinearLayout
+               android:id="@+id/ll"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:layout_marginTop="6dp"
+               android:layout_marginLeft="16sp"
+               android:background="#f2f2f2"
+               android:layout_below="@+id/tv_start_timer_fm_customer">
+
+               <RelativeLayout
+                   android:layout_weight="1"
+                   android:background="#f2f2f2"
+                   android:layout_width="0dp"
+                   android:layout_height="140dp">
+
+                   <ImageView
+                       android:id="@+id/iv_place_order_customer_fm"
+                       android:layout_width="90dp"
+                       android:layout_height="90dp"
+                       android:src="@drawable/ic_location_on_black_24dp" />
+
+                   <TextView
+                       android:layout_width="90dp"
+                       android:textColor="@android:color/black"
+                       android:textSize="16sp"
+                       android:gravity="center"
+                       android:layout_below="@+id/iv_place_order_customer_fm"
+                       android:layout_height="wrap_content"
+                       android:text="Place New Order"/>
+               </RelativeLayout>
+
+               <RelativeLayout
+                   android:layout_weight="1"
+                   android:layout_width="0dp"
+                   android:background="#FFFFFF"
+                   android:layout_height="140dp">
+
+                   <ImageView
+                       android:id="@+id/iv_customer_details_collect_payment"
+                       android:layout_width="90dp"
+                       android:layout_height="90dp"
+                       android:src="@drawable/ic_location_on_black_24dp" />
+
+                   <TextView
+                       android:layout_width="90dp"
+                       android:layout_centerInParent="true"
+                       android:textColor="@android:color/black"
+                       android:gravity="center"
+                       android:textSize="16sp"
+                       android:layout_below="@+id/iv_customer_details_collect_payment"
+                       android:layout_height="wrap_content"
+                       android:text="Collect Payment"/>
+               </RelativeLayout>
+
+               <RelativeLayout
+                   android:background="#f2f2f2"
+                   android:layout_weight="1"
+                   android:layout_width="0dp"
+                   android:layout_height="140dp">
+
+                   <ImageView
+                       android:id="@+id/iv_customer_reports_customer_fm"
+                       android:layout_width="90dp"
+                       android:layout_height="90dp"
+                       android:src="@drawable/ic_location_on_black_24dp" />
+
+                   <TextView
+                       android:layout_width="90dp"
+                       android:gravity="center"
+                       android:layout_centerInParent="true"
+                       android:textColor="@android:color/black"
+                       android:textSize="16sp"
+                       android:layout_below="@+id/iv_customer_reports_customer_fm"
+                       android:layout_height="wrap_content"
+                       android:text="Customer Log"/>
+               </RelativeLayout>
+
+               <RelativeLayout
+                   android:layout_marginRight="6dp"
+                   android:background="#FFFFFF"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:layout_height="140dp">
+
+               </RelativeLayout>
+           </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_1"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="020sp"
+                    android:text="Customer Aanad agency updated."/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="17sp"
+                    android:text="done by Shashank on 23 Jun, 2018 12:50 PM"/>
+
+                <View
+                    android:layout_marginTop="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#f2f2f2"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_2"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="020sp"
+                    android:text="Customer Aanad agency updated."/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="17sp"
+                    android:text="done by Shashank on 23 Jun, 2018 12:50 PM"/>
+
+                <View
+                    android:layout_marginTop="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#f2f2f2"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_3"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="020sp"
+                    android:text="Customer Aanad agency updated."/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="17sp"
+                    android:text="done by Shashank on 23 Jun, 2018 12:50 PM"/>
+
+                <View
+                    android:layout_marginTop="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#f2f2f2"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

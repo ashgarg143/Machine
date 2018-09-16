@@ -23,7 +23,7 @@ class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cutomer_item_layout,viewGroup,false));
+        return new ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.new_item_layout,viewGroup,false));
     }
 
     @Override
@@ -33,6 +33,7 @@ class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
 
         viewHolder.tvListItem1.setText(news.getTitle());
         viewHolder.tvListItem2.setText(news.getSlug());
+        viewHolder.tvNewsItemDate.setText(news.getDate().substring(0, 10));
     }
 
     @Override
@@ -42,13 +43,14 @@ class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tvListItem1,tvListItem2;
+        private TextView tvListItem1,tvListItem2,tvNewsItemDate;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvListItem1 = itemView.findViewById(R.id.tv_list_item_1);
             tvListItem2 = itemView.findViewById(R.id.tv_list_item_2);
+            tvNewsItemDate = itemView.findViewById(R.id.tv_news_item_date);
         }
     }
 }

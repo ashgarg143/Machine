@@ -1,27 +1,23 @@
 package com.example.shivamvk.machinemindful;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Order {
 
-    private String id,date,remark,quantity,price,discount,tax,total,product,customer,salesmen;
+    private String customer,date,remark,total;
+    private ArrayList<LineItemOrder> lineItemOrderList;
 
-    public Order(String id, String date, String remark, String quantity, String price
-            , String discount, String tax, String total, String product
-            , String customer, String salesmen) {
-        this.id = id;
+    public Order(String customer, String date, String remark, String total, ArrayList<LineItemOrder> lineItemOrderList) {
+        this.customer = customer;
         this.date = date;
         this.remark = remark;
-        this.quantity = quantity;
-        this.price = price;
-        this.discount = discount;
-        this.tax = tax;
         this.total = total;
-        this.product = product;
-        this.customer = customer;
-        this.salesmen = salesmen;
+        this.lineItemOrderList = lineItemOrderList;
     }
 
-    public String getId() {
-        return id;
+    public String getCustomer() {
+        return customer;
     }
 
     public String getDate() {
@@ -32,35 +28,11 @@ public class Order {
         return remark;
     }
 
-    public String getQuantity() {
-        return quantity;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public String getDiscount() {
-        return discount;
-    }
-
-    public String getTax() {
-        return tax;
-    }
-
     public String getTotal() {
         return total;
     }
 
-    public String getProduct() {
-        return product;
-    }
-
-    public String getCustomer() {
-        return customer;
-    }
-
-    public String getSalesmen() {
-        return salesmen;
+    public ArrayList<LineItemOrder> getLineItemOrderList() {
+        return lineItemOrderList;
     }
 }

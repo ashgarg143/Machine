@@ -13,9 +13,16 @@
         <item
             android:id="@+id/nav_news"
             android:title="News" />
+
+        <item
+            android:id="@+id/nav_payment"
+            android:title="Payment collection" />
         <item
             android:id="@+id/nav_message"
-            android:title="Message" />
+            android:title="Message"/>
+        <item
+            android:id="@+id/nav_contact_us"
+            android:title="Contact us"/>
     </group>
 
 </menu>

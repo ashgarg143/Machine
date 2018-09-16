@@ -47,6 +47,8 @@ public class CustomersFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        getActivity().setTitle("Customers");
+
         pbCustomers = view.findViewById(R.id.pb_customers);
         rvCustomers = view.findViewById(R.id.rv_customers);
 
@@ -71,15 +73,15 @@ public class CustomersFragment extends Fragment {
                                 String id = object.getString("id");
                                 String name = object.getString("name");
                                 String slug1 = object.getString("slug1");
-                                String customercode = object.getString("customer_code");
-                                String salemanager = object.getString("sale_manager");
+                                String customercode = "bh";
+                                String salemanager = "gkh";
                                 String status = object.getString("status");
                                 String address = object.getString("address");
                                 String pincode = object.getString("pincode");
                                 String country = object.getString("country");
                                 String city = object.getString("city");
                                 String state = object.getString("state");
-                                String area = object.getString("area");
+                                String area = "dfhch";
                                 String latitude = object.getString("lattitude");
                                 String longitude = object.getString("longitude");
                                 String email = object.getString("email");
@@ -118,7 +120,7 @@ public class CustomersFragment extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getContext(), "Volley error!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }){
             @Override
@@ -132,5 +134,73 @@ public class CustomersFragment extends Fragment {
 
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         requestQueue.add(stringRequest);
+
+        /*Customer customer = new Customer(
+                "1",
+                "A S H Sales",
+                "sf",
+                "fa",
+                "af",
+                "ad",
+                "ad",
+                "ad",
+                "Inida",
+                "Gujarat",
+                "Kodinar",
+                "ad",
+                "Ad",
+                "ad",
+                "Ad",
+                "ad",
+                "Ad"
+        );
+
+        Customer customer1 = new Customer(
+                "1",
+                "A S H Sales",
+                "sf",
+                "fa",
+                "af",
+                "ad",
+                "ad",
+                "ad",
+                "Inida",
+                "Gujarat",
+                "Kodinar",
+                "ad",
+                "Ad",
+                "ad",
+                "Ad",
+                "ad",
+                "Ad"
+        );
+
+        Customer customer2 = new Customer(
+                "1",
+                "A S H Sales",
+                "sf",
+                "fa",
+                "af",
+                "ad",
+                "ad",
+                "ad",
+                "Inida",
+                "Gujarat",
+                "Kodinar",
+                "ad",
+                "Ad",
+                "ad",
+                "Ad",
+                "ad",
+                "Ad"
+        );
+
+        customerList.add(customer);
+        customerList.add(customer1);
+        customerList.add(customer2);
+
+        CustomerAdapter adapter = new CustomerAdapter(getContext(), customerList);
+        rvCustomers.setAdapter(adapter);
+        pbCustomers.setVisibility(View.GONE);*/
     }
 }

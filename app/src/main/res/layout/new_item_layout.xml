@@ -5,7 +5,6 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
-        android:id="@+id/ll_cutomer_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -17,13 +16,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tv_list_item_1"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"/>
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="4dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_list_item_2"/>
+            android:id="@+id/tv_news_item_date"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_list_item_2"
+            android:textSize="16sp"
+            android:layout_marginTop="4dp"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 

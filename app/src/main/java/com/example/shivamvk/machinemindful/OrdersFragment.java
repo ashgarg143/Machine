@@ -46,6 +46,8 @@ public class OrdersFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        getActivity().setTitle("Orders");
+
         pbOrders = view.findViewById(R.id.pb_orders);
         rvOrders = view.findViewById(R.id.rv_orders);
 
@@ -66,22 +68,29 @@ public class OrdersFragment extends Fragment {
                         try {
                             JSONArray jsonArray = new JSONArray(response);
                             for(int i=0;i<jsonArray.length();i++){
+                                ArrayList<LineItemOrder> itemOrders = new ArrayList<>();
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                JSONArray lineOrders = jsonObject.getJSONArray("line_item_orders");
+                                for (int j = 0; j < lineOrders.length(); j++) {
+                                    JSONObject lineOrder = lineOrders.getJSONObject(j);
+                                    LineItemOrder itemOrder = new LineItemOrder(
+                                            lineOrder.getString("id"),
+                                            lineOrder.getString("quantity"),
+                                            lineOrder.getString("price"),
+                                            lineOrder.getString("total"),
+                                            lineOrder.getString("order"),
+                                            lineOrder.getString("product")
+                                    );
+                                    itemOrders.add(itemOrder);
+                                }
                                 Order order = new Order(
-                                        jsonObject.getString("id"),
-                                        jsonObject.getString("date"),
-                                        jsonObject.getString("remark"),
-                                        jsonObject.getString("quantity"),
-                                        jsonObject.getString("price"),
-                                        jsonObject.getString("discount"),
-                                        jsonObject.getString("tax"),
-                                        jsonObject.getString("total"),
-                                        jsonObject.getString("product"),
                                         jsonObject.getString("customer"),
-                                        jsonObject.getString("salesmen")
+                                        jsonObject.getString("date"),
+                                        "(" + jsonObject.getString("remark") + ")",
+                                        jsonObject.getString("total"),
+                                        itemOrders
                                 );
                                 orderList.add(order);
-
 
                             }
                             OrderAdapter adapter = new OrderAdapter(getContext(),orderList);
@@ -109,5 +118,28 @@ public class OrdersFragment extends Fragment {
 
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         requestQueue.add(stringRequest);
+
+        /*Order order = new Order(
+                "488",
+                "22-08-2018",
+                "(Pending)",
+                "df",
+                "fgh",
+                "dg",
+                "Dg",
+                "44441.00",
+                "Sfvs",
+                "Kanhaiya Distributors",
+                "ASD"
+        );
+        orderList.add(order);
+        orderList.add(order);
+        orderList.add(order);
+        orderList.add(order);
+        orderList.add(order);
+
+        OrderAdapter adapter = new OrderAdapter(getContext(),orderList);
+        rvOrders.setAdapter(adapter);
+        pbOrders.setVisibility(View.GONE);*/
     }
 }
