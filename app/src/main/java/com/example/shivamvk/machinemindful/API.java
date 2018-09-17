@@ -6,4 +6,6 @@ public class API {
     public static final String ORDERS_LIST = "http://178.128.2.30/order/api/all_order/";
     public static final String MESSAGES = "http://178.128.2.30/msg/api/msg_list/";
     public static final String PAYMENTS = "http://178.128.2.30/payment/api/payment/";
+    public static final String ALL_LOGS = "http://178.128.2.30/api/all_log/";
+    public static final String ADD_PAYMENT = "http://178.128.2.30/payment/api/add_payment/";
 }

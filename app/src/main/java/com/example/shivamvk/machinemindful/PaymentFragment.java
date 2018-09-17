@@ -79,8 +79,10 @@ public class PaymentFragment extends Fragment {
                             JSONArray jsonArray = new JSONArray(response);
                             for(int i=0;i<jsonArray.length();i++){
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                JSONObject customer = jsonObject.getJSONObject("customer");
+                                String name = customer.getString("name");
                                 Payment payment = new Payment(
-                                        jsonObject.getString("customerName"),
+                                        name,
                                         jsonObject.getString("date"),
                                         jsonObject.getString("description"),
                                         jsonObject.getString("amount")

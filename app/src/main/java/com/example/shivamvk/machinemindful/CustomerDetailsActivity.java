@@ -166,8 +166,10 @@ public class CustomerDetailsActivity extends AppCompatActivity {
             if (position == 0){
                 CustomerActivityFragment fragment = new CustomerActivityFragment();
                 Bundle bundle = new Bundle();
+                String id = getIntent().getStringExtra("id");
                 String name = getIntent().getStringExtra("name");
                 bundle.putString("name", name);
+                bundle.putString("id", id);
                 fragment.setArguments(bundle);
                 return fragment;
             } else {
