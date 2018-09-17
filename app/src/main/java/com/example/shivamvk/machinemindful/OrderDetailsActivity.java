@@ -98,10 +98,12 @@ public class OrderDetailsActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             OrderDetailsOrderFragment fragment = new OrderDetailsOrderFragment();
             Bundle bundle = new Bundle();
+            String id = getIntent().getStringExtra("id");
             String date = getIntent().getStringExtra("date").substring(0,10);
-            String customer = getIntent().getStringExtra("customer");
+            String customer = getIntent().getStringExtra("customerName");
+            bundle.putString("id",id);
             bundle.putString("date", date);
-            bundle.putString("customer", customer);
+            bundle.putString("customerName", customer);
             fragment.setArguments(bundle);
             return fragment;
         }

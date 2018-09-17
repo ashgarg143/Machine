@@ -135,7 +135,7 @@ public class CustomersFragment extends Fragment {
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         requestQueue.add(stringRequest);
 
-        /*Customer customer = new Customer(
+        /*Customer customerName = new Customer(
                 "1",
                 "A S H Sales",
                 "sf",
@@ -195,7 +195,7 @@ public class CustomersFragment extends Fragment {
                 "Ad"
         );
 
-        customerList.add(customer);
+        customerList.add(customerName);
         customerList.add(customer1);
         customerList.add(customer2);
 

@@ -10,222 +10,223 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
         android:layout_marginLeft="6dp"
+        android:layout_marginTop="6dp"
         android:orientation="vertical">
 
         <TextView
-            android:paddingTop="6dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="6dp"
             android:text="Order No."
             android:textColor="@android:color/holo_blue_light"
             android:textSize="17sp" />
 
         <TextView
+            android:id="@+id/tv_order_details_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="#597"
             android:textColor="@android:color/black"
-            android:textSize="24sp"/>
+            android:textSize="24sp" />
 
         <View
-            android:layout_marginTop="6dp"
             android:layout_width="match_parent"
             android:layout_height="3dp"
-            android:background="#f2f2f2"/>
+            android:layout_marginTop="6dp"
+            android:background="#f2f2f2" />
 
         <TextView
-            android:paddingTop="6dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="6dp"
             android:text="Order Date"
             android:textColor="@android:color/holo_blue_light"
             android:textSize="17sp" />
 
         <TextView
+            android:id="@+id/tv_order_details_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="12-09-2018"
-            android:id="@+id/tv_order_details_date"
             android:textColor="@android:color/black"
-            android:textSize="24sp"/>
+            android:textSize="24sp" />
 
         <View
-            android:layout_marginTop="6dp"
             android:layout_width="match_parent"
             android:layout_height="3dp"
-            android:background="#f2f2f2"/>
+            android:layout_marginTop="6dp"
+            android:background="#f2f2f2" />
 
         <TextView
-            android:paddingTop="6dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="6dp"
             android:text="Customer Name"
             android:textColor="@android:color/holo_blue_light"
             android:textSize="17sp" />
 
         <TextView
+            android:id="@+id/tv_order_details_customer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="[GUJ] AZAD SALES AGENCY"
-            android:id="@+id/tv_order_details_customer"
             android:textColor="@android:color/black"
-            android:textSize="24sp"/>
+            android:textSize="24sp" />
 
         <View
-            android:layout_marginTop="6dp"
             android:layout_width="match_parent"
             android:layout_height="3dp"
-            android:background="#f2f2f2"/>
+            android:layout_marginTop="6dp"
+            android:background="#f2f2f2" />
 
         <TextView
-            android:paddingTop="6dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Product Detail"
-            android:textStyle="bold"
             android:layout_gravity="center"
+            android:paddingTop="6dp"
+            android:text="Product Detail"
             android:textAllCaps="true"
             android:textColor="@android:color/black"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
         <View
-            android:layout_marginTop="6dp"
             android:layout_width="match_parent"
             android:layout_height="3dp"
-            android:background="#f2f2f2"/>
+            android:layout_marginTop="6dp"
+            android:background="#f2f2f2" />
 
         <RelativeLayout
-            android:layout_marginTop="6dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp">
 
             <ImageView
                 android:id="@+id/image"
                 android:layout_width="55dp"
                 android:layout_height="60dp"
                 android:background="@android:color/darker_gray"
-                android:src="@drawable/ic_location_on_black_24dp"/>
+                android:src="@drawable/ic_location_on_black_24dp" />
 
             <TextView
-                android:textSize="15sp"
-                android:textColor="@android:color/black"
-                android:layout_marginLeft="8dp"
                 android:id="@+id/tv_product_name"
-                android:text="Rs.10/-Golden Mix P"
-                android:layout_toRightOf="@+id/image"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@+id/image"
+                android:text="Rs.10/-Golden Mix P"
+                android:textColor="@android:color/black"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tv_discount"
-                android:layout_marginRight="6dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:textSize="15sp"
+                android:layout_marginRight="6dp"
+                android:text="(0.00%)"
                 android:textColor="@android:color/black"
-                android:text="(0.00%)"/>
+                android:textSize="15sp" />
 
             <TextView
-                android:layout_marginLeft="8dp"
-                android:textColor="@android:color/black"
                 android:id="@+id/tv_price_1"
-                android:text="Rs.54.0"
-                android:textSize="20sp"
-                android:layout_toRightOf="@id/image"
-                android:layout_below="@+id/tv_product_name"
-                android:layout_marginTop="16dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_product_name"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_toRightOf="@id/image"
+                android:text="Rs.54.0"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tv_x"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="X"
-                android:gravity="center_horizontal"
+                android:layout_below="@id/tv_product_name"
                 android:layout_marginLeft="2dp"
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="22dp"
+                android:layout_toRightOf="@+id/tv_price_1"
+                android:gravity="center_horizontal"
+                android:text="X"
                 android:textColor="@android:color/holo_blue_light"
-                android:textSize="12sp"
-                android:layout_below="@id/tv_product_name"
-                android:layout_toRightOf="@+id/tv_price_1"/>
+                android:textSize="12sp" />
 
             <TextView
-                android:layout_toRightOf="@+id/tv_x"
-                android:layout_marginTop="16dp"
-                android:textColor="@android:color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_product_name"
+                android:layout_marginTop="16dp"
+                android:layout_toRightOf="@+id/tv_x"
                 android:text="90.00"
-                android:textSize="20sp"/>
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_marginRight="6dp"
-                android:text="Rs.4860.60"
                 android:layout_below="@id/tv_discount"
-                android:textSize="20sp"
+                android:layout_marginRight="6dp"
                 android:layout_marginTop="16dp"
-                android:textColor="@android:color/holo_blue_light"/>
+                android:text="Rs.4860.60"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/image"
-                android:layout_toRightOf="@+id/image"
                 android:layout_marginLeft="8dp"
-                android:textSize="15sp"
                 android:layout_marginRight="12dp"
-                android:text="hellofkjnjhdfvhgvbfhshellofkjnjhdfvhgvbfhshellofkjnjhdfvhgvbfhshellofkjnjhdfvhgvbfhs"/>
-
+                android:layout_toRightOf="@+id/image"
+                android:text="hellofkjnjhdfvhgvbfhshellofkjnjhdfvhgvbfhshellofkjnjhdfvhgvbfhshellofkjnjhdfvhgvbfhs"
+                android:textSize="15sp" />
 
 
         </RelativeLayout>
+
         <View
-            android:layout_marginTop="6dp"
             android:layout_width="match_parent"
             android:layout_height="3dp"
-            android:background="#f2f2f2"/>
+            android:layout_marginTop="6dp"
+            android:background="#f2f2f2" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tax(5.00%)  Rs.243.0"
-            android:textSize="18sp"
-            android:layout_marginTop="6dp"
+            android:layout_gravity="end"
             android:layout_marginRight="6dp"
-            android:layout_gravity="end"/>
+            android:layout_marginTop="6dp"
+            android:text="Tax(5.00%)  Rs.243.0"
+            android:textSize="18sp" />
 
-       <RelativeLayout
-           android:layout_marginTop="10dp"
-           android:layout_marginRight="6dp"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:orientation="horizontal">
-           <TextView
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="6dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="Total Amount"
-               android:textSize="22sp"
-               android:textColor="@android:color/black"
-               />
+            <TextView
 
-           <TextView
-               android:layout_alignParentEnd="true"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="Rs.5103.00"
-               android:textSize="22sp"
-               android:textColor="@android:color/holo_blue_light"
-               />
-       </RelativeLayout>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Amount"
+                android:textColor="@android:color/black"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Rs.5103.00"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="22sp" />
+        </RelativeLayout>
 
     </LinearLayout>
 

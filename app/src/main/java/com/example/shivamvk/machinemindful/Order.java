@@ -1,23 +1,35 @@
 package com.example.shivamvk.machinemindful;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Order {
 
-    private String customer,date,remark,total;
+    private String id, customerName,date,remark,total;
     private ArrayList<LineItemOrder> lineItemOrderList;
 
-    public Order(String customer, String date, String remark, String total, ArrayList<LineItemOrder> lineItemOrderList) {
-        this.customer = customer;
+    public Order(String id, String customerName, String date, String remark, String total, ArrayList<LineItemOrder> lineItemOrderList) {
+        this.id = id;
+        this.customerName = customerName;
         this.date = date;
         this.remark = remark;
         this.total = total;
         this.lineItemOrderList = lineItemOrderList;
     }
 
-    public String getCustomer() {
-        return customer;
+   /* public Order(String customerName, String date, String remark, String total, ArrayList<LineItemOrder> lineItemOrderList) {
+        this.customerName = customerName;
+        this.date = date;
+        this.remark = remark;
+        this.total = total;
+        this.lineItemOrderList = lineItemOrderList;
+    }*/
+
+    public String getId() {
+        return id;
+    }
+
+    public String getCustomerName() {
+        return customerName;
     }
 
     public String getDate() {

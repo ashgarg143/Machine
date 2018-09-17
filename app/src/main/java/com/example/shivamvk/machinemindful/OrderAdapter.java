@@ -34,18 +34,19 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
 
         final Order order = orderList.get(i);
 
-        viewHolder.tvOrderItemId.setText("#1");
+        viewHolder.tvOrderItemId.setText("#"+order.getId());
         viewHolder.tvORderItemStatus.setText(order.getRemark());
         viewHolder.tvOrderItemDate.setText(order.getDate().substring(0,10));
-        viewHolder.tvORderItemCustomer.setText(order.getCustomer());
+        viewHolder.tvORderItemCustomer.setText(order.getCustomerName());
         viewHolder.tvORderItemPrice.setText(order.getTotal());
 
         viewHolder.llOrderItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, OrderDetailsActivity.class);
+                intent.putExtra("id",order.getId());
                 intent.putExtra("date", order.getDate());
-                intent.putExtra("customer", order.getCustomer());
+                intent.putExtra("customerName", order.getCustomerName());
                 Bundle bundle = new Bundle();
                 intent.putExtra("bundle", bundle);
                 context.startActivity(intent);

@@ -83,8 +83,11 @@ public class OrdersFragment extends Fragment {
                                     );
                                     itemOrders.add(itemOrder);
                                 }
+                                JSONObject customerJSONObject = jsonObject.getJSONObject("customer");
+
                                 Order order = new Order(
-                                        jsonObject.getString("customer"),
+                                        jsonObject.getString("id"),
+                                        customerJSONObject.getString("name"),
                                         jsonObject.getString("date"),
                                         "(" + jsonObject.getString("remark") + ")",
                                         jsonObject.getString("total"),

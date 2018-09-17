@@ -11,15 +11,17 @@ import android.widget.TextView;
 
 public class OrderDetailsOrderFragment extends Fragment {
 
-    String date, customer;
+    String id,date, customerName;
 
-    TextView tvOrderDetailDate, tvOrderDetailCustomer;
+    TextView tvOrderDetailsId,tvOrderDetailDate, tvOrderDetailCustomer;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        id = getArguments().getString("id");
         date = getArguments().getString("date");
-        customer = getArguments().getString("customer");
+        customerName = getArguments().getString("customerName");
         return inflater.inflate(R.layout.fragment_order_order_details, null, false);
     }
 
@@ -27,11 +29,14 @@ public class OrderDetailsOrderFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        tvOrderDetailsId = view.findViewById(R.id.tv_order_details_id);
         tvOrderDetailDate = view.findViewById(R.id.tv_order_details_date);
         tvOrderDetailCustomer = view.findViewById(R.id.tv_order_details_customer);
 
+        tvOrderDetailsId.setText("#"+id);
         tvOrderDetailDate.setText(date);
-        tvOrderDetailCustomer.setText(customer);
+        tvOrderDetailCustomer.setText(customerName);
+
 
     }
 }
