@@ -1,5 +1,6 @@
 package com.example.shivamvk.machinemindful;
 
+import android.app.ProgressDialog;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,12 +10,26 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class AddPaymentActivity extends AppCompatActivity {
 
     Spinner spPaymentType;
+    EditText etName,etDate,etAmount,etDesc;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +43,11 @@ public class AddPaymentActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
+        etName = findViewById(R.id.et_add_payment_customer_name);
+        etDate = findViewById(R.id.et_add_payment_customer_date);
+        etAmount = findViewById(R.id.et_add_payment_customer_amount);
+        etDesc = findViewById(R.id.et_add_payment_customer_description);
+
         spPaymentType = findViewById(R.id.sp_add_payment_type);
 
         setUpSpinner();
@@ -36,7 +56,42 @@ public class AddPaymentActivity extends AppCompatActivity {
         fabAddPaymentAPI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(AddPaymentActivity.this, "API not connected yet!", Toast.LENGTH_SHORT).show();
+                final ProgressDialog progressDialog = new ProgressDialog(AddPaymentActivity.this);
+                progressDialog.setMessage("Adding payment...");
+                progressDialog.setCanceledOnTouchOutside(false);
+                progressDialog.setCancelable(false);
+                progressDialog.show();
+
+                String EndOfUrl = "?amount=" + etAmount.getText().toString()
+                        + "&description=" + etDesc.getText().toString()
+                        + "&customer=" + etName.getText().toString();
+
+                StringRequest stringRequest = new StringRequest(Request.Method.POST,
+                        API.ADD_PAYMENT + EndOfUrl,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                progressDialog.dismiss();
+                                onBackPressed();
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                progressDialog.dismiss();
+                                Toast.makeText(AddPaymentActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }){
+                    @Override
+                    public Map<String, String> getHeaders() throws AuthFailureError {
+                        Map<String, String> headers = new HashMap<>();
+                        headers.put("Content-Type", "application/json; charset=UTF-8");
+                        headers.put("Authorization", "token 0ee1248c5a84e8b1e36a8a15da48c0bb7580926c");
+                        return headers;
+                    }
+                };
+                RequestQueue requestQueue = Volley.newRequestQueue(AddPaymentActivity.this);
+                requestQueue.add(stringRequest);
             }
         });
     }

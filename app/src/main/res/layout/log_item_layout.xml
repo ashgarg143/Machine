@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll_1"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:id="@+id/tv_log_main_heading"
+            android:text="Customer Aanad agency updated."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="17sp"
+            android:id="@+id/tv_log_sub_heading"
+            android:text="done by Shashank on 23 Jun, 2018 12:50 PM"/>
+
+        <View
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#f2f2f2"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

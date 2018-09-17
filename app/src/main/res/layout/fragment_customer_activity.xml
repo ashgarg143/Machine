@@ -133,101 +133,30 @@
                    android:layout_height="140dp">
 
                </RelativeLayout>
+
            </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/ll_1"
-                android:layout_marginTop="12dp"
-                android:layout_marginLeft="16dp"
-                android:layout_width="match_parent"
+            <ProgressBar
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:layout_below="@+id/ll"
-                android:orientation="vertical">
+                android:layout_marginTop="16dp"
+                android:id="@+id/pb_logs"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@android:color/black"
-                    android:textSize="020sp"
-                    android:text="Customer Aanad agency updated."/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@android:color/darker_gray"
-                    android:textSize="17sp"
-                    android:text="done by Shashank on 23 Jun, 2018 12:50 PM"/>
-
-                <View
-                    android:layout_marginTop="3dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="#f2f2f2"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_2"
-                android:layout_marginTop="12dp"
-                android:layout_marginLeft="16dp"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ll_1"
-                android:orientation="vertical">
+                android:text="Loading logs..."
+                android:gravity="center"
+                android:id="@+id/tv_empty_logs"
+                android:layout_below="@+id/pb_logs"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@android:color/black"
-                    android:textSize="020sp"
-                    android:text="Customer Aanad agency updated."/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@android:color/darker_gray"
-                    android:textSize="17sp"
-                    android:text="done by Shashank on 23 Jun, 2018 12:50 PM"/>
-
-                <View
-                    android:layout_marginTop="3dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="#f2f2f2"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_3"
-                android:layout_marginTop="12dp"
-                android:layout_marginLeft="16dp"
+            <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ll_2"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@android:color/black"
-                    android:textSize="020sp"
-                    android:text="Customer Aanad agency updated."/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@android:color/darker_gray"
-                    android:textSize="17sp"
-                    android:text="done by Shashank on 23 Jun, 2018 12:50 PM"/>
-
-                <View
-                    android:layout_marginTop="3dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:background="#f2f2f2"/>
-
-            </LinearLayout>
-
+                android:id="@+id/rv_customer_details_log"
+                android:layout_below="@+id/ll"/>
 
         </RelativeLayout>
 
