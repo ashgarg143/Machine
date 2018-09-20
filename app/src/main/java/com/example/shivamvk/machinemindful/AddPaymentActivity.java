@@ -30,6 +30,8 @@ public class AddPaymentActivity extends AppCompatActivity {
     Spinner spPaymentType;
     EditText etName,etDate,etAmount,etDesc;
 
+    String name;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,10 @@ public class AddPaymentActivity extends AppCompatActivity {
 
         setUpSpinner();
 
+        name = getIntent().getStringExtra("name");
+        etName.setText(name);
+        etName.setFocusable(false);
+
         FloatingActionButton fabAddPaymentAPI = findViewById(R.id.fab_add_Payment_api);
         fabAddPaymentAPI.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +70,7 @@ public class AddPaymentActivity extends AppCompatActivity {
 
                 String EndOfUrl = "?amount=" + etAmount.getText().toString()
                         + "&description=" + etDesc.getText().toString()
-                        + "&customer=" + etName.getText().toString();
+                        + "&customer=   " + etName.getText().toString();
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST,
                         API.ADD_PAYMENT + EndOfUrl,
