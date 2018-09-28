@@ -155,7 +155,7 @@ public class HomeActivity extends AppCompatActivity
                             String url = API.ADD_LOCATION + "?latitude=" + location.getLatitude()
                                     +"&longitude=" + location.getLongitude()
                                     + "&time=" + ""
-                                    + "&user=" + "1";
+                                    + "&user=" + "7";
                             StringRequest stringRequest = new StringRequest(Request.Method.POST,
                                     url,
                                     new Response.Listener<String>() {

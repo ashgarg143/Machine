@@ -46,7 +46,6 @@ public class AddPaymentActivity extends AppCompatActivity {
         }
 
         etName = findViewById(R.id.et_add_payment_customer_name);
-        etDate = findViewById(R.id.et_add_payment_customer_date);
         etAmount = findViewById(R.id.et_add_payment_customer_amount);
         etDesc = findViewById(R.id.et_add_payment_customer_description);
 
@@ -67,27 +66,34 @@ public class AddPaymentActivity extends AppCompatActivity {
                 progressDialog.setCanceledOnTouchOutside(false);
                 progressDialog.setCancelable(false);
                 progressDialog.show();
-
-                String EndOfUrl = "?amount=" + etAmount.getText().toString()
-                        + "&description=" + etDesc.getText().toString()
-                        + "&customer=   " + etName.getText().toString();
+                String url = API.ADD_PAYMENT;
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST,
-                        API.ADD_PAYMENT + EndOfUrl,
+                        url,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
                                 progressDialog.dismiss();
-                                onBackPressed();
+                                Toast.makeText(AddPaymentActivity.this, "Location shared!", Toast.LENGTH_SHORT).show();
                             }
                         },
                         new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 progressDialog.dismiss();
-                                Toast.makeText(AddPaymentActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(AddPaymentActivity.this, "API error!", Toast.LENGTH_SHORT).show();
                             }
                         }){
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> params = new HashMap<>();
+                        params.put("Content-Type", "application/x-www-form-urlencoded");
+                        params.put("amount", "123");
+                        params.put("description", "Vdf");
+                        params.put("customer", "1");
+                        return params;
+                    }
+
                     @Override
                     public Map<String, String> getHeaders() throws AuthFailureError {
                         Map<String, String> headers = new HashMap<>();
