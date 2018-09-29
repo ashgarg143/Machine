@@ -86,7 +86,7 @@ public class CustomersFragment extends Fragment {
                                 String longitude = object.getString("longitude");
                                 String email = object.getString("email");
                                 String mobile = object.getString("mobile");
-                                String team = object.getString("team");
+                                String team = "Scda";
                                 Customer customer = new Customer(
                                         id,
                                         name,
