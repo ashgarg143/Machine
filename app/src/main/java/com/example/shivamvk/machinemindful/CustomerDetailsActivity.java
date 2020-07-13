@@ -74,6 +74,34 @@ public class CustomerDetailsActivity extends AppCompatActivity {
 
         tvCustomerDetailsName.setText(stName);
 
+        ivEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String id = getIntent().getStringExtra("id");
+                String name = getIntent().getStringExtra("name");
+                String email = getIntent().getStringExtra("email");
+                String mobile = getIntent().getStringExtra("mobile");
+                String address = getIntent().getStringExtra("address");
+                String country = getIntent().getStringExtra("country");
+                String state = getIntent().getStringExtra("state");
+                String city = getIntent().getStringExtra("city");
+                String area = getIntent().getStringExtra("area");
+                String pincode = getIntent().getStringExtra("pincode");
+                Intent intent = new Intent(CustomerDetailsActivity.this, EditCustomerDetails.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", name);
+                intent.putExtra("mobile", mobile);
+                intent.putExtra("email", email);
+                intent.putExtra("address", address);
+                intent.putExtra("country", country);
+                intent.putExtra("state", state);
+                intent.putExtra("city", city);
+                intent.putExtra("area", area);
+                intent.putExtra("pincode", pincode);
+                startActivity(intent);
+            }
+        });
+
         ivLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
